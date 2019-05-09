@@ -8,8 +8,6 @@ DNEA was proposed in "Yiping Liu, Hisao Ishibuchi, Yusuke Nojima, Naoki Masuyama
 
 DNEA-L was propsoed in "Yiping Liu, Hisao Ishibuchi, Yusuke Nojima, Naoki Masuyama and Yuanyan Han. Searching for Local Pareto Optimal Solutions: A Case Study on Polygon-Based Problems. Proceedings of IEEE Congress on Evolutionary Computation (CEC 2019). (in press)"
 
-The codes use PlatEMO published in "Ye Tian et al., PlatEMO: A MATLAB Platform for Evolutionary Multi-Objective Optimization, IEEE Computational Intelligence Magazine, 2017, 12(4): 73-87". 
-
-Please drop all the codes into the main folder of PlatEMO (v1.6). Then Enjoy.
+The codes use PlatEMO (v1.6) published in "Ye Tian et al., PlatEMO: A MATLAB Platform for Evolutionary Multi-Objective Optimization, IEEE Computational Intelligence Magazine, 2017, 12(4): 73-87". 
 
 Please contact yiping0liu@gmail.com if you have any problem.
