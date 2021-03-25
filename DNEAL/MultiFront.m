@@ -1,20 +1,15 @@
 function [Population,FrontNo,fDS] = MultiFront(Population,N,nb,mod,K,Nns)
 % The environmental selection of DNEAL
 
+%------------------------------- Reference --------------------------------
+% Liu, Y., Ishibuchi, H., Nojima, Y., Masuyama, N. and Han, Y., 2019, June.
+% Searching for local pareto optimal solutions: A case study on 
+% polygon-based problems. In 2019 IEEE Congress on Evolutionary Computation
+% (CEC) (pp. 896-903). IEEE.
 %--------------------------------------------------------------------------
-% Copyright 2018-2019 Yiping Liu
-% This is the code of DNEAL proposed in "Yiping Liu, Hisao Ishibuchi, 
-% Yusuke Nojima, Naoki Masuyama and Yuyan Han. Searching for Local Pareto 
-% Optimal Solutions: A Case Study on Polygon-Based Problems. Proceedings of 
-% IEEE Congress on Evolutionary Computation (CEC 2019), in press."
+% Copyright Yiping Liu
 % Please contact {yiping0liu@gmail.com} if you have any problem.
 %--------------------------------------------------------------------------
-% This code uses PlatEMO published in "Ye Tian, Ran Cheng, Xingyi Zhang, 
-% and Yaochu Jin, PlatEMO: A MATLAB Platform for Evolutionary 
-% Multi-Objective Optimization [Educational Forum], IEEE Computational 
-% Intelligence Magazine, 2017, 12(4): 73-87".
-%--------------------------------------------------------------------------
-
     
     %% find local non-dominated solutions
     NP = length(Population);

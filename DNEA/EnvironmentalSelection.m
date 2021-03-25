@@ -1,18 +1,14 @@
 function [Population,FrontNo,fDS] = EnvironmentalSelection(Population,N,nb,mod)
 % The environmental selection of DNEA
 
+%------------------------------- Reference --------------------------------
+% Liu, Y., Ishibuchi, H., Nojima, Y., Masuyama, N. and Shang, K., 2018, 
+% September. A double-niched evolutionary algorithm and its behavior on 
+% polygon-based problems. In International Conference on Parallel Problem 
+% Solving from Nature (pp. 262-273). Springer, Cham.
 %--------------------------------------------------------------------------
-% Copyright 2018-2019 Yiping Liu
-% This is the code of DNEA proposed in "Yiping Liu, Hisao Ishibuchi, Yusuke
-% Nojima, Naoki Masuyama and Ke Shang. A Double-Niched Evolutionary 
-% Algorithm and its Behaviors on Polygon-Based Problems. Proceedings of 
-% Conference on Parallel Problem Solving from Nature (PPSN 2018), 263-273."
+% Copyright Yiping Liu
 % Please contact {yiping0liu@gmail.com} if you have any problem.
-%--------------------------------------------------------------------------
-% This code uses PlatEMO published in "Ye Tian, Ran Cheng, Xingyi Zhang, 
-% and Yaochu Jin, PlatEMO: A MATLAB Platform for Evolutionary 
-% Multi-Objective Optimization [Educational Forum], IEEE Computational 
-% Intelligence Magazine, 2017, 12(4): 73-87".
 %--------------------------------------------------------------------------
 
     %% Non-dominated sorting
@@ -21,7 +17,7 @@ function [Population,FrontNo,fDS] = EnvironmentalSelection(Population,N,nb,mod)
     
     %% Select the solutions in the last front
     Last   = find(FrontNo==MaxFNo);
-    [Choose,fDS] = DoulbeSharingSelection(Population(Last).objs,Population(Last).decs,N-sum(Next),nb,mod);
+    [Choose,fDS] = LastSelection(Population(Last).objs,Population(Last).decs,N-sum(Next),nb,mod);
 
     % Population for next generation
     fDS   = [zeros(1,sum(Next)),fDS(Choose)];
@@ -31,8 +27,8 @@ function [Population,FrontNo,fDS] = EnvironmentalSelection(Population,N,nb,mod)
 
 end
 
-function [Choose,fDS] = DoulbeSharingSelection(PopObj,PopDec,K,nb,mod)
-% Select part of the solutions in the last front using the doulbe sharing function 
+function [Choose,fDS] = LastSelection(PopObj,PopDec,K,nb,mod)
+% Select part of the solutions in the last front
 
     N = size(PopObj,1);    
     nb = min(nb,max(N-1,0));
